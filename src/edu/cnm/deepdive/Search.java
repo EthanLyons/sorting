@@ -2,16 +2,12 @@ package edu.cnm.deepdive;
 
 public class Search {
 
-  public static int linearSearch(int needle, int[] haystack)  {
-
+  public static int linearSearch(int needle, int[] haystack) {
     for (int i = 0; i < haystack.length; i++) {
-    if (haystack[i] == needle)  {
-      return i;
+      if (haystack[i] == needle) {
+        return i;
+      }
     }
-
-
-    }
-
     return -1;
   }
 
@@ -21,15 +17,14 @@ public class Search {
 
   private static int binarySearch(int needle, int[] haystack, int from, int to) {
     if (from >= to) {
-      return -1; // TODO We can do better!
+      return - (from + 1);
     }
-    int midpoint = (from + to) /2;
+    int midpoint = (from + to) / 2;
     if (haystack[midpoint] == needle) {
       return midpoint;
     }
-    if (haystack[midpoint] < needle)  {
-      return binarySearch(needle, haystack, midpoint + 1,
-          to);
+    if (haystack[midpoint] < needle) {
+      return binarySearch(needle, haystack, midpoint + 1, to);
     }
     return binarySearch(needle, haystack, from, midpoint);
   }

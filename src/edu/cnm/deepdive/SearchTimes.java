@@ -20,7 +20,7 @@ public class SearchTimes {
 
     startTime = System.currentTimeMillis();
     for (int needle : needles) {
-      Arrays.binarySearch(haystack, needle);
+      Search.linearSearch(needle, haystack);
     }
     endTime = System.currentTimeMillis();
     System.out.printf("Time elapsed for linear search: %.3f seconds%n",
